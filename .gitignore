@@ -1,0 +1,8 @@
+circuits/node_modules
+circuits/compiled
+circuits/*.ptau
+.DS_Store
+
+# Added by cargo
+
+/target

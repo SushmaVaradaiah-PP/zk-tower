@@ -1,0 +1,13 @@
+{
+    "name": "zk-tower-circuits",
+    "private": true,
+    "description": "Demo circuits, trusted setup and proving scripts for zk-tower",
+    "scripts": {
+        "compile:age-over": "circom --r1cs --wasm --sym -l node_modules -o compiled/ age_over.circom"
+    },
+    "devDependencies": {
+        "circomlib": "^2.0.5",
+        "circomlibjs": "^0.1.7",
+        "snarkjs": "^0.7.6"
+    }
+}
