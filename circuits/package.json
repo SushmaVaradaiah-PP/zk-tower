@@ -3,7 +3,11 @@
     "private": true,
     "description": "Demo circuits, trusted setup and proving scripts for zk-tower",
     "scripts": {
-        "compile:age-over": "circom --r1cs --wasm --sym -l node_modules -o compiled/ age_over.circom"
+        "compile:age-over": "mkdir -p compiled && circom --r1cs --wasm --sym -l node_modules -o compiled/ age_over.circom",
+        "witness:valid-cred-and-valid-age": "node compiled/age_over_js/generate_witness.js compiled/age_over_js/age_over.wasm ./inputs/1_valid_credentials_and_valid_age.json compiled/witness.wtns",
+        "witness:valid-cred-and-invalid-age": "node compiled/age_over_js/generate_witness.js compiled/age_over_js/age_over.wasm ./inputs/2_valid_credentials_but_invalid_age.json compiled/witness.wtns",
+        "witness:invalid-cred-and-valid-age": "node compiled/age_over_js/generate_witness.js compiled/age_over_js/age_over.wasm ./inputs/3_invalid_credential_and_valid_age.json compiled/witness.wtns",
+        "witness:invalid-cred-and-invalid-age": "node compiled/age_over_js/generate_witness.js compiled/age_over_js/age_over.wasm ./inputs/4_invalid_credential_and_invalid_age.json compiled/witness.wtns"
     },
     "devDependencies": {
         "circomlib": "^2.0.5",
