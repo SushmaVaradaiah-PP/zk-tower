@@ -10,7 +10,8 @@
         "witness:invalid-cred-and-invalid-age": "node compiled/age_over_js/generate_witness.js compiled/age_over_js/age_over.wasm ./inputs/4_invalid_credential_and_invalid_age.json compiled/witness.wtns",
         "issuer:init": "node scripts/issueCredential.js init",
         "issuer:alice": "node scripts/issueCredential.js issue 20050615 compiled/alice_credential.json",
-        "witness:alice": "jq '. + {currentDate: \"20261119\"}' compiled/alice_credential.json > compiled/alice_input.json && node compiled/age_over_js/generate_witness.js compiled/age_over_js/age_over.wasm compiled/alice_input.json compiled/witness.wtns && echo 'witness OK'"
+        "witness:alice": "jq '. + {currentDate: \"20261119\"}' compiled/alice_credential.json > compiled/alice_input.json && node compiled/age_over_js/generate_witness.js compiled/age_over_js/age_over.wasm compiled/alice_input.json compiled/witness.wtns && echo 'witness OK'",
+        "build:age-over": "yarn compile:age-over && node scripts/buildAgeOver.js"
     },
     "devDependencies": {
         "circomlib": "^2.0.5",
